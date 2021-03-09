@@ -545,7 +545,7 @@ var (
 func RegisterType(x Message, name string) {
 	if _, ok := protoTypedNils[name]; ok {
 		// TODO: Some day, make this a panic.
-		log.Printf("proto: duplicate proto type registered: %s", name)
+		// log.Printf("proto: duplicate proto type registered: %s", name)
 		return
 	}
 	t := reflect.TypeOf(x)
@@ -566,7 +566,7 @@ func RegisterMapType(x interface{}, name string) {
 		panic(fmt.Sprintf("RegisterMapType(%T, %q); want map", x, name))
 	}
 	if _, ok := protoMapTypes[name]; ok {
-		log.Printf("proto: duplicate proto type registered: %s", name)
+		// log.Printf("proto: duplicate proto type registered: %s", name)
 		return
 	}
 	t := reflect.TypeOf(x)
